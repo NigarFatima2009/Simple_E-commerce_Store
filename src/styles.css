@@ -1,0 +1,36 @@
+/* src/styles.css */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #282c34;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav button {
+  margin-left: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+button{
+  margin-top: 10px;
+}
+

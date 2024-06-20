@@ -1,0 +1,25 @@
+/* src/components/Product.css */
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin: 7px;
+    transition: transform 0.2s;
+    margin-bottom: 10px;
+  }
+  
+  .product-card:hover {
+    transform: scale(0.8);
+  }
+  
+  .product-image {
+    max-width: 1200px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .product-heading {
+    text-align: center; 
+  }

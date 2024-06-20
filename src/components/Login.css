@@ -1,0 +1,104 @@
+.container{
+    display: inline-block;
+    background:  #57bed8;
+    width: 1309px;
+    height: 0px;
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    height: 80vh;
+    margin-top: 0px;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(45deg, #cb38ee, #5b99da);
+    background-image: url('../images/a.jpg'); 
+    background-size: cover;
+    background-position: center;
+    margin-left: 0px;
+}
+
+.login-div{
+    display: inline-block;
+    width: 434px;
+    height: 340px;
+    margin-top: 60px;
+    margin-left: 80px;
+    opacity: 100%;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.4); 
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+
+  }
+
+  .login-div:hover {
+      transform: scale(1.05);
+  }
+
+  
+.div-text1{
+    width: 240px;
+    height: 30px;
+    border-radius:6px;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(2px);
+    padding: 12px;
+    margin-bottom: 12px;
+    margin-left: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+
+}
+
+.div-button1{
+    width:120px;
+    height: 50px;
+    background-color: rgba(0, 0, 112, 0.8); /* Semi-transparent dark blue */
+    color: aliceblue;
+    transition: ease-out 0.5s;
+    border-radius: 6px;
+    overflow: hidden;
+
+}
+
+button1 {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+
+  }
+  
+  .div-button1 {
+    width: 120px;
+    height: 50px;
+    background-color: #000070;
+    color: aliceblue;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .div-button1:hover {
+    background-color: rgba(0, 0, 112, 1);
+    transform: scale(1.05);
+  }
+  
+  button1:disabled, .div-button1:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  
+

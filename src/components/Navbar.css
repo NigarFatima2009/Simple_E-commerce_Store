@@ -1,0 +1,77 @@
+/* Navbar.css */
+.container12 {
+    width: 1510px;
+    display: flex;
+    justify-content: left;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 70px;
+    width: 90%;
+    background:  #c8706e;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 20px -5px;
+  }
+  
+  .heading {
+    margin-left: 20px;
+    color: whitesmoke;
+    font-size: 24px;
+  }
+  
+  .Navigation {
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+  }
+  
+  .Navigation a {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color 200ms ease;
+    margin: 0 1px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .Navigation a:hover {
+    color: #376888;
+    transform: scale(1.2);
+
+  }
+  
+  .item {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 7px 17px;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
+    text-align: center;
+
+  }
+.well{
+  margin-right: 32px;
+  color: whitesmoke;
+  background-color: coral;
+  transform: scale(0.8);
+}
+  .wel{
+    margin-right: 10px;
+  }
+
+   body {
+    overflow-x: hidden;
+  }
+  
+ 
+   
+ 
+ 
+ 

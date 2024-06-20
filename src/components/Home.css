@@ -1,0 +1,110 @@
+.welcome-heading {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 900;
+}
+
+.image-item {
+  width: 360px; 
+  height: 300px;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 36px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.image-text {
+  position: absolute;
+  top: 250px;
+  left: 10px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 50px;
+  margin-left: 10px;
+  font-weight: bold;
+
+}
+
+
+.image-text1{
+  position: absolute;
+  top: 550px;
+  left: 10px;
+  width: 100%;
+  color: #b3355b;
+  font-size: 80px;
+  margin-left: 10px;
+  font-weight: bolder;
+}
+
+
+.image-item img {
+  width: 210px;
+  height: 210px;
+  margin-left: 15px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.full-width-row{
+  width: 1400px;
+}
+
+.container
+.image-item:hover {
+  transform: scale(1.05);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-image {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.hidden-images {
+  display: none;
+}
+
+.hidden-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+}
