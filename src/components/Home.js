@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 import './Home.css';
 
-// Import images
 import image1 from '../images/1.jpg';
 import image2 from '../images/2.jpg';
 import image3 from '../images/3.jpg';
@@ -21,7 +20,6 @@ function Home() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [showFullScreen, setShowFullScreen] = useState(false);
 
-  // Array of image paths excluding 6.jpg (for grid display)
   const images = [image1, image2, image3, image4, image5, image7, image8, image9, image10];
 
   // Function to handle image click

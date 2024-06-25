@@ -54,7 +54,7 @@
 .div-button{
     width:120px;
     height: 50px;
-    background-color: rgba(0, 0, 112, 0.8); /* Semi-transparent dark blue */
+    background-color: rgba(0, 0, 112, 0.8);
     color: aliceblue;
     transition: ease-out 0.5s;
     border-radius: 6px;

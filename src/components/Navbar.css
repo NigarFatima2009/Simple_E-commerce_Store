@@ -12,7 +12,7 @@
     padding: 10px 20px;
     height: 70px;
     width: 90%;
-    background:  #c8706e;
+    background:  #004080;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 20px -5px;
   }
   
@@ -42,7 +42,7 @@
   }
   
   .Navigation a:hover {
-    color: #376888;
+    color: #66B2FF;
     transform: scale(1.2);
 
   }
