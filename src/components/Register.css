@@ -18,6 +18,14 @@
 
 }
 
+
+.password-toggle-icon {
+  margin-top: 20px;
+  margin-right: -17px;
+  cursor: pointer;
+  color: #5A6072;
+}
+
 .Register-div{
   display: inline-block;
   width: 434px;

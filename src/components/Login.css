@@ -17,6 +17,16 @@
     margin-left: 0px;
 }
 
+
+.password-toggle-icon {
+  position: absolute;
+  right: 60px;
+  cursor: pointer;
+  color: #5A6072;
+  padding-left: 10px;
+}
+
+
 .login-div{
     display: inline-block;
     width: 434px;
