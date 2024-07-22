@@ -1,33 +1,38 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { StoreProvider } from './context/StoreContext';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { StoreProvider, StoreContext } from './context/StoreContext';
 import Home from './components/Home';
 import Register from './components/Register';
-import Footer from './components/Footer';
 import Login from './components/Login';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
-import Navbar from './components/Navbar'; 
+import Navbar from './components/Navbar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 import './styles.css';
 
+const ProtectedRoute = ({ children }) => {
+  const { user } = React.useContext(StoreContext);
+  return user ? children : <Navigate to="/login" />;
+};
+
+// App Component
 function App() {
   return (
-    <div>
-  <StoreProvider>
+    <StoreProvider>
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/products" element={<ProtectedRoute><ProductList /></ProtectedRoute>} />
+          <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
         </Routes>
+        <ToastContainer /> 
       </Router>
     </StoreProvider>
-    </div>
-    );
+  );
 }
 
 export default App;

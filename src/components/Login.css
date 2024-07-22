@@ -17,6 +17,12 @@
     margin-left: 0px;
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 
 .password-toggle-icon {
   position: absolute;

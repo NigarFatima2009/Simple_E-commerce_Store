@@ -1,28 +1,42 @@
-// src/components/Login.js
-
 import React, { useContext, useState } from 'react';
 import { StoreContext } from '../context/StoreContext';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const { login } = useContext(StoreContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    if (login(username, password)) {
+  const handleLogin = async () => {
+    try {
+      await login(username, password);
       setUsername('');
       setPassword('');
       navigate('/');
-    } else {
-      setError('Invalid username or password');
+    } catch (err) {
+      // Log the error to see its structure
+      console.error('Login error:', err);
+  
+      // Check if the error message is 'Invalid credentials'
+      if (err.response && err.response.data && err.response.data.message) {
+        const errorMessage = err.response.data.message;
+        if (errorMessage === 'Invalid credentials') {
+          toast.error('Invalid credentials');
+        } else {
+          toast.error(errorMessage);
+        }
+      } else {
+        toast.error('An unexpected error occurred');
+      }
     }
   };
+  
 
   const toggleShowPassword = () => {
     setShowPassword(prevShowPassword => !prevShowPassword);
@@ -62,8 +76,8 @@ function Login() {
         >
           Login
         </button>
-        {error && <p>{error}</p>}
       </div>
+      <ToastContainer />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import axios from 'axios';
 import './StoreContext.css';
 
 import image1 from '../images/1.jpg';
@@ -25,10 +26,22 @@ const initialProducts = [
   { id: 9, name: 'Three Piece suit', price: (Math.random() * 100).toFixed(2), category: 'women', image: image10 },
 ];
 
+axios.interceptors.request.use(
+  config => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);
+
 export const StoreProvider = ({ children }) => {
   const [products] = useState(initialProducts);
   const [cart, setCart] = useState([]);
-  const [users, setUsers] = useState([]);
   const [user, setUser] = useState(null);
 
   const addToCart = (product) => {
@@ -39,23 +52,34 @@ export const StoreProvider = ({ children }) => {
     setCart(cart.filter((product) => product.id !== productId));
   };
 
-  const register = (username, password) => {
-    setUsers([...users, { username, password }]);
+  const register = async (username, password) => {
+    try {
+      const response = await axios.post('http://localhost:5001/api/auth/register', { username, password });
+      console.log('Registration successful:', response.data);
+    } catch (error) {
+      if (error.response?.data?.message === 'User already exists') {
+        throw new Error('User already exists');
+      }
+      console.error('Registration error:', error.response?.data || error.message);
+      throw new Error(error.response?.data?.message || 'Registration failed');
+    }
   };
 
-  const login = (username, password) => {
-    const foundUser = users.find(
-      (user) => user.username === username && user.password === password
-    );
-    if (foundUser) {
-      setUser(username);
-      return true;
+  const login = async (username, password) => {
+    try {
+      const response = await axios.post('http://localhost:5001/api/auth/login', { username, password });
+      setUser(response.data.username);
+      localStorage.setItem('token', response.data.token);
+    } catch (error) {
+      // Forward the error with the message
+      throw error;
     }
-    return false;
   };
+  
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem('token');
   };
 
   return (

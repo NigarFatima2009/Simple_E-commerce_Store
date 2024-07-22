@@ -1,5 +1,3 @@
-// src/components/Register.js
-
 import React, { useContext, useState } from 'react';
 import { StoreContext } from '../context/StoreContext';
 import { useNavigate } from 'react-router-dom';
@@ -11,13 +9,18 @@ function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleRegister = () => {
-    register(username, password);
-    setUsername('');
-    setPassword('');
-    navigate('/login');
+  const handleRegister = async () => {
+    try {
+      await register(username, password);
+      setUsername('');
+      setPassword('');
+      navigate('/login');
+    } catch (err) {
+      setError(err.message); // Display the error message from the register function
+    }
   };
 
   const toggleShowPassword = () => {
@@ -58,6 +61,7 @@ function Register() {
         >
           Register
         </button>
+        {error && <p>{error}</p>}
       </div>
     </div>
   );
