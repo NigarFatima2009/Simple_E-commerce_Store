@@ -35,8 +35,8 @@ Make sure you have the following installed on your system:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/Counter-app.git
-    cd Counter-app
+    git clone https://github.com/NigarFatima2009/Simple_E-commerce_Store.git
+    cd Simple_E-commerce_Store
     ```
 
 2. **Install dependencies**:
